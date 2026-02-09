@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+*.log
+.env
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+db_data/
+exports/*.csv
+.env.local
+.env.*.local
+package-lock.json.bak

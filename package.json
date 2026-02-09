@@ -1,0 +1,23 @@
+{
+  "name": "async-csv-export-service",
+  "version": "1.0.0",
+  "description": "Asynchronous CSV export service for large datasets",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "seed": "node seeds/seed_database.js"
+  },
+  "keywords": ["export", "csv", "streaming", "async"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.10.0",
+    "uuid": "^9.0.0",
+    "csv-stringify": "^6.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
