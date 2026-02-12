@@ -33,7 +33,7 @@
       EXPORT_STORAGE_PATH: /app/exports
     volumes:
       - ./exports:/app/exports
-    mem_limit: 256m
+    mem_limit: 150m
     restart: unless-stopped
     healthcheck:
       test: [ 'CMD-SHELL', 'curl --silent --fail http://localhost:8080/health || exit 1' ]
