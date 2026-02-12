@@ -133,6 +133,36 @@ EXPORT_STORAGE_PATH=/app/exports
 - **Streaming**: Backpressure-aware CSV generation
 - **Response Times**: <200ms on all endpoints
 
+### Large dataset seeding (10M rows)
+
+The repository includes an optional large seed at `seeds/seed_10m.sql`. This will insert 10,000,000 rows and can take a long time and significant disk/CPU. Do NOT run on a small machine.
+
+To run the large seed (recommended on a prepared machine):
+
+PowerShell (Windows):
+```powershell
+# start the stack
+docker compose up -d --build
+
+# run the seed (interactive, long-running)
+.\scripts\seed_10m.ps1
+```
+
+Unix / WSL:
+```bash
+# start the stack
+docker compose up -d --build
+
+# run the seed (interactive, long-running)
+./scripts/seed_10m.sh
+```
+
+If you need to re-run init scripts, remove the DB volume first:
+```bash
+docker compose down -v
+docker compose up --build -d
+```
+
 ## Architecture
 
 ### Components
