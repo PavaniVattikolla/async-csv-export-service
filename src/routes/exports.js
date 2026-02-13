@@ -13,6 +13,7 @@ router.post('/csv', async (req, res) => {
     if (country_code) filters.country_code = country_code;
     if (subscription_tier) filters.subscription_tier = subscription_tier;
     if (min_ltv) filters.min_ltv = min_ltv;
+     if (min_ltv !== undefined && isNaN(parseFloat(min_ltv))) return res.status(400).json({ error: 'min_ltv must be a valid number' });
 
     const csvOptions = {};
     if (delimiter) csvOptions.delimiter = delimiter;
