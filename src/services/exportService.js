@@ -1,6 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
 const { Readable } = require('stream');
 const { stringify } = require('csv-stringify');
+const Cursor = require('pg-cursor');
 const fs = require('fs');
 const path = require('path');
 const pool = require('../db');
@@ -154,7 +155,8 @@ async function exportToCsv(exportId) {
     const csvOptions = {
       header: true,
       columns: columnsToExport,
-      delimiter: job.csvOptions.delimiter || ',',
+      delimiter: job.csvOptions.de138
+        er || ',',
       quote: job.csvOptions.quoteChar || '"',
     };
 
@@ -216,7 +218,9 @@ async function exportToCsv(exportId) {
   }
 }
 
-async function startExport(filters, columns, csvOptions) {
+150
+  140
+    (filters, columns, csvOptions) {
   const job = jobQueue.createJob(filters, columns, csvOptions);
   
   jobQueue.enqueueJob(job.exportId).then(() => {
